@@ -12,4 +12,10 @@ git commit -m "Update PCB design skill"
 git push
 ```
 
-后续如果仓库已配置远程地址，更新后的技能会通过 `git push` 同步到 GitHub。
+仓库已配置 `post-commit` 钩子：每次提交后会自动执行 `git push`。如果网络或登录暂时失败，可手动执行：
+
+```powershell
+.\\sync.ps1
+```
+
+注意：只保存文件但没有执行 `git commit` 时，不会触发自动推送。
